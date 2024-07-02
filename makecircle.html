@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            position: absolute;
+            background: aquamarine;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener("click", function(event) {
+            const circle = document.createElement("div");
+            circle.className = "circle";
+            circle.style.left = `${event.pageX - 25}px`;
+            circle.style.top = `${event.pageY - 25}px`;
+            document.body.appendChild(circle);
+        });
+    </script>
+</body>
+</html>
+
+
