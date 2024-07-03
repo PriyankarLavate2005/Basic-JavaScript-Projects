@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+ 
+    box-sizing: border-box;
+}
+/* Basic reset */
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    background-color: #e5ebce;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation styling */
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+ul{
+    display: flex;
+    text-decoration: none;
+    flex-direction: row;
+
+}
+li{
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 30px;
+    text-decoration: none;
+}
+.nav li a {
+    color: #fff;
+    text-decoration: none;
+    margin: 15px;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+.nav li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+
+.search-field {
+    display: flex;
+}
+
+.search-field input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-field button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #575757;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-field button:hover {
+    background-color: #444;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    background-color: aliceblue;
+    justify-content: space-between;
+}
+button{
+    background-color: rgb(5, 72, 23);
+    padding: 4px,10px;
+    cursor: pointer;
+    color: azure;
+    border: 1px solid white;
+    border-end-end-radius: 5px;
+    font-weight: 600;
+    width: fit-content;
+    padding: 5px
+}
+button:hover{
+    background-color: aqua;
+    color: black;
+    border: 1px solid black;
+}
+
+
+
+.logo{
+    font-size: 24px;
+    font-family: bold;
+}
+.search-field{
+   display: flex; 
+   gap: 35px;
+}
+input{
+    padding: 4px,10px;
+}
+section{
+    margin-top: 80px;
+    margin-left: 100px;
+}
+img{
+    border-radius: 50%;
+    margin-left: 100px;
+    height: 300px;
+    width: 300px;
+
+}
+ .hero-section{
+    display: flex;
+    align-items: center;
+ }
+ .hero-section-left h1{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+ }
+ .hero-section-left span{
+    color: aquamarine;
+    font-weight: 900;
+    font-size: 2.5rem;
+ }
+ .hero-section-left p{
+    font-weight: 500;
+    font-size: 20px;
+ }
+ .hero-section-left p span{
+    font-weight: 700;
+    font-size: 25px;
+    color: rgb(52, 121, 121);
+ }
+ footer{
+   margin-top: 300px;
+ }
+ .hero-section-right button{
+    padding: 10px;
+    margin-top: 10px;
+
+    margin-left: 210px
+ }
