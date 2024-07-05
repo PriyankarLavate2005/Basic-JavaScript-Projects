@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <style>
+                    div{
+                    display: flex;
+                    flex-direction: column;
+                    height: 300px;
+                    width: 400px;
+                    padding: 15px;
+                    background-color: azure;
+                    margin-left: 400px;
+                    border-radius: 4px;
+                    border-color: rgb(13, 4, 4);
+                    border: 5px solid black;
+                }
+                h1{
+                    margin-left: 400px;
+                }
+                button{
+                    margin-top: 20px;
+                }
+        </style>
+    <label for="inpm">Enter word:</label>
+    <input type="text" name="" id="inpm">
+    <button onclick="Submit()">Submit</button>
+    <h2 id="result"></h2>
+            <script>
+    function Submit(){
+        let count = 0;
+        let vowels = ['a', 'e', 'i', 'o', 'u'];
+        let word = document.getElementById("inpm").value.toLowerCase(); // Convert to lowercase to handle uppercase letters
+
+        for(let i = 0; i < word.length; i++){
+            if (vowels.includes(word[i])) {
+                count++;
+            }
+        }
+
+        alert("Vowel count is " + count);
+    }
+            </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+            div{
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            width: 400px;
+            padding: 15px;
+            background-color: azure;
+            margin-left: 400px;
+            border-radius: 4px;
+            border-color: rgb(13, 4, 4);
+            border: 5px solid black;
+        }
+        h1{
+            margin-left: 400px;
+        }
+        button{
+            margin-top: 20px;
+        }
+</style>
+   <div>
+    <label for="inpm">Enter Marks</label>
+    <input type="number" name="" id="inpm">
+    <button onclick="Submit()">Submit</button>
+   </div>
+
+<script>
+
+function Submit(){
+    inp=document.getElementById("inpm").value;
+    let marks=[34,56,78];
+     marks.push(Number(inp))
+    document.write(marks)
+ let high = 0;
+  let low=25
+
+for (let i = 0; i < marks.length; i++) {
+    if (marks[i] > high) {
+        high = marks[i];
+    }
+}
+for(let i=0;i<marks.length;i++){
+    if(marks[i]<=low){
+        low=marks[i]
+    }
+}
+alert("Highest Marks:"+high+"And Lowest Marks Are:"+low)
+console.log("Highest mark:", high,"LOwest:",low);
+}
+
+
+    </script>
+</body>
+</html>

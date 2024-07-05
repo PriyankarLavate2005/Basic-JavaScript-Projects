@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colormixer</title>
+</head>
+<body>
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            width: 400px;
+            padding: 15px;
+            background-color: azure;
+            margin-left: 400px;
+            border-radius: 4px;
+            border-color: rgb(13, 4, 4);
+            border: 5px solid black;
+        }
+        h1{
+            margin-left: 400px;
+        }
+        button{
+            margin-top: 20px;
+        }
+    </style>
+    <h1>ColorMixer</h1>
+<div>
+    <label for="col1">Enter Color 1:</label>
+    <input type="text" name="" id="col1">
+    <label for="col1">Enter Color 2:</label>
+    <input type="text" name="" id="col2">
+    <button onclick="Check()">Check</button>
+    <h2 id="result"></h2>
+</div>
+<script>
+    function Check(){
+    col1=document.getElementById("col1").value;
+    col2=document.getElementById("col2").value;
+    if(col1==="red" && col2==="blue"){
+        document.getElementById("result").innerText="purple"
+    }
+    else if(col1==="red" && col2==="yellow"){
+    document.getElementById("result").innerText="orange"
+    }
+    else if(col1==="blue" && col2==="yellow"){
+        document.getElementById("result").innerText="green"
+
+    }
+    else{
+        document.getElementById("result").innerText="Invalid color Combination"
+
+    }
+}
+</script>
+</body>
+</html>
