@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            width: 400px;
+            padding: 15px;
+            background-color: azure;
+            margin-left: 400px;
+            border-radius: 4px;
+            border-color: rgb(13, 4, 4);
+            border: 5px solid black;
+        }
+        h1{
+            margin-left: 400px;
+        }
+        button{
+            margin-top: 20px;
+        }
+    </style>
+    <h1>ColorMixer</h1>
+    <div>
+        <label for="v1">Enter YOUr carname and Days</label>
+        <input type="text" name="" id="v1">
+        <input type="number" name="" id="n1">
+        <button onclick="Check(car,day)">submit</button>
+        <h1 id="res"></h1>
+    </div>
+    <script>
+        v1=document.getElementById('v1').value;
+        n1=document.getElementById('n1').value;
+        let carv=parseInt(n1)
+        function Check(v1,carv){
+          if(v1 === "Economy"){
+            rent=carv*4000
+            document.getElementById('res').innerText=rent
+          }
+        }
+    </script>
+</body>
+</html>
