@@ -1,0 +1,415 @@
+<html>
+
+<head>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js">
+
+</script>
+<style>
+  div p{
+   background-color: #29c221;
+    padding: 10px;
+    margin: 20px;
+    display: inline-block;
+  }
+</style>
+
+</head>
+
+<h1 style="background-color:#900C3F" align="center"> Student Management System</H1>
+
+<div ng-view></div>
+
+<body>
+
+<div class="nav1" ng-app = "mainApp" style="background-color: #5924a4;">
+
+<p><a id="stu1"  href ="#jw">Home</a></p>
+
+<p><a id="stu2"    href ="#ro">Admin</a></p>
+
+<p><a id="stu3"   href ="#ph">Student</a></p>
+<p><a  id="stu4"   href ="#rg">Registration</a></p>
+
+<p><a  id="stu5"  href ="#co">cource</a></p>
+
+<div ng-view></div>
+
+<script type ="text/ng-template" id ="jw.html">
+
+<h1 style="background-color:powderblue;"> Welcome to Home page</h1>
+
+
+<p>Contact:8976567897</p>
+
+{{message}}
+
+</script>
+
+<script type ="text/ng-template" id ="ro.html">
+
+<h1 style="background-color:powderblue;">Welcome Admin</h1>
+
+
+<p>Contact:6789765467</p>
+
+{{message}}
+
+</script>
+<script type ="text/ng-template" id ="ph.html">
+
+  <h1 style="background-color:powderblue;">Welcome Student</h1>
+  
+  
+  <p>Contact:6789765467</p>
+  
+  {{message}}
+  
+  </script>
+  <script type ="text/ng-template" id ="rg.html">
+
+    <h1 style="background-color:powderblue;">Start your Registration</h1>
+    
+    
+    <p>Contact:6789765467</p>
+    
+    {{message}}
+    
+    </script>
+
+
+<script type ="text/ng-template" id ="co.html">
+
+<h1 style="background-color:powderblue;">Please Select Your Cource</h1>
+
+<p>Contact:7890987654</p>
+
+{{message}}
+
+</script>
+
+</div>
+
+<script>
+
+var mainApp = angular.module("mainApp", ['ngRoute']);
+
+mainApp.config(['$routeProvider', function($routeProvider) {
+
+$routeProvider
+.when('/co', {
+
+templateUrl: 'co.html',controller: 'jwController'
+
+            })
+            .when('/rg', {
+
+templateUrl: 'rg.html',controller: 'jwController'
+
+            })
+
+.when('/jw', {
+
+templateUrl: 'jw.html',controller: 'jwController'
+
+            })
+
+.when('/ro', {
+
+templateUrl: 'ro.html',controller: 'roController'
+
+            })
+
+.when('/ph', {
+
+templateUrl: 'ph.html',controller: 'phController'
+
+            })
+
+}]);
+
+mainApp.controller('jwController', function($scope) {
+
+$scope.message = "Welcome J W MARRIOTT";
+
+         });
+
+mainApp.controller('roController', function($scope) {
+
+$scope.message = "Welcome Royal Orchid Hotel";
+
+         });
+
+mainApp.controller('phController', function($scope) {
+
+$scope.message = "Welcome Pride Hotel";
+
+        });
+        <!DOCTYPE html>
+<html ng-app="studentManagementApp">
+
+<head>
+    <title>Student Management System</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .login-container h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container form label {
+            margin-bottom: 5px;
+        }
+
+        .login-container form input[type="text"],
+        .login-container form input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .login-container form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .login-container form button:hover {
+            background-color: #555;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .section-content {
+            display: none;
+            margin-top: 20px; 
+        }
+
+        .section-content.active {
+            display: block;
+        }
+        .section-content div {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#/home">Home</a></li>
+                <li><a href="#/admin">Admin</a></li>
+                <li><a href="#/student">Student</a></li>
+                <li><a href="#/registration">Registration</a></li>
+                <li><a href="#/course">Course</a></li>
+                <li><a href="#/fees">Fees</a></li>
+                <li ng-show="isLoggedIn"><a href="" ng-click="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="login-container" ng-controller="LoginController" ng-show="!isLoggedIn">
+        <h2>Login</h2>
+        <form ng-submit="login()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" ng-model="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" ng-model="password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <a href="#/forgot-password">Forgot Password?</a>
+    </div>
+
+    <div ng-view></div>
+
+    <script>
+        var app = angular.module('studentManagementApp', ['ngRoute']);
+
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl: 'login.html',
+                    controller: 'LoginController'
+                })
+                .when('/home', {
+                    templateUrl: 'home.html',
+                    controller: 'HomeController'
+                })
+                .when('/admin', {
+                    templateUrl: 'admin.html',
+                    controller: 'AdminController'
+                })
+                .when('/student', {
+                    templateUrl: 'student.html',
+                    controller: 'StudentController'
+                })
+                .when('/registration', {
+                    templateUrl: 'registration.html',
+                    controller: 'RegistrationController'
+                })
+                .when('/course', {
+                    templateUrl: 'course.html',
+                    controller: 'CourseController'
+                })
+                .when('/fees', {
+                    templateUrl: 'fees.html',
+                    controller: 'FeesController'
+                })
+                .when('/forgot-password', {
+                    templateUrl: 'forgot-password.html',
+                    controller: 'ForgotPasswordController'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                });
+        });
+
+        app.controller('LoginController', function ($scope, $location) {
+            $scope.isLoggedIn = false;
+
+            $scope.login = function () {
+                var username = $scope.username;
+                var password = $scope.password;
+                if (username === 'priyanka' && password === 'priyanka123') {
+                    $scope.isLoggedIn = true;
+                    $location.path('/home');
+                } else {
+                    alert('Invalid username or password');
+                }
+            };
+
+            $scope.logout = function () {
+                $scope.isLoggedIn = false;
+                $location.path('/');
+            };
+        });
+
+        app.controller('HomeController', function ($scope) {
+            $scope.message = 'Welcome to Home!';
+        });
+
+        app.controller('AdminController', function ($scope) {
+            $scope.message = 'Welcome to Admin Panel!';
+        });
+
+        app.controller('StudentController', function ($scope) {
+            $scope.message = 'Welcome to Student Panel!';
+        });
+
+        app.controller('RegistrationController', function ($scope) {
+            $scope.message = 'Welcome to Registration Panel!';
+        });
+
+        app.controller('CourseController', function ($scope) {
+            $scope.message = 'Welcome to Course Panel!';
+        });
+
+        app.controller('FeesController', function ($scope) {
+            $scope.message = 'Welcome to Fees Panel!';
+        });
+
+        app.controller('ForgotPasswordController', function ($scope) {
+            $scope.message = 'Forgot Password';
+        });
+    </script>
+    <div class="section-content" ng-class="{ 'active': $location.path() === '/home' }" ng-show="isLoggedIn">
+        <div ng-controller="HomeController">
+            <h2>Welcome to Home!</h2>
+            <div>{{ message }}</div>
+        </div>
+    </div>
+
+    <div class="section-content" ng-class="{ 'active': $location.path() === '/admin' }" ng-show="isLoggedIn">
+        <div ng-controller="AdminController">
+            <h2>Welcome to Admin Panel!</h2>
+            <div>{{ message }}</div>
+        </div>
+    </div>
+
+    <div class="section-content" ng-class="{ 'active': $location.path() === '/student' }" ng-show="isLoggedIn">
+        <div ng-controller="StudentController">
+            <h2>Welcome to Student Panel!</h2>
+            <div>{{ message }}</div>
+        </div>
+    </div>
+
+    <div class="section-content" ng-class="{ 'active': $location.path() === '/registration' }" ng-show="isLoggedIn">
+        <div ng-controller="RegistrationController">
+            <h2>Welcome to Registration Panel!</h2>
+            <div>{{ message }}</div>
+        </div>
+    </div>
+
+    <div class="section-content" ng-class="{ 'active': $location.path() === '/course' }" ng-show="isLoggedIn">
+        <div ng-controller="CourseController">
+            <h2>Welcome to Course Panel!</h2>
+            <div>{{ message }}</div>
+        </div>
+    </div>
+
+    <div class="section-content" ng-class="{ 'active': $location.path() === '/fees' }" ng-show="isLoggedIn">
+        <div ng-controller="FeesController">
+            <h2>Welcome to Fees Panel!</h2>
+            <div>{{ message }}</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+      </script>
+
+       </body></html>
